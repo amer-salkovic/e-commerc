@@ -1,8 +1,8 @@
 import React from "react";
 
-const ProductCard = ({ product, onClick}) => {
+const ProductCard = ({ product, Click}) => {
   return (
-    <div onClick={() => onClick(product)} className="rounded-lg border bg-card p-4">
+    <div onClick={() => Click(product)} className="rounded-lg border bg-card p-4">
       <img
         src={product.image}
         alt={product.title}

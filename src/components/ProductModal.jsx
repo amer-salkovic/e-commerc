@@ -4,9 +4,9 @@ const ProductModal = ({ product, onClose }) => {
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
       onClick={onClose}
     >
-      <div
-        className="w-full max-w-lg rounded-xl border bg-card p-6 shadow-xl"
+         <div
         onClick={(e) => e.stopPropagation()}
+        className="w-full max-w-lg rounded-lg bg-card p-6"
       >
         <img
           src={product.image}
