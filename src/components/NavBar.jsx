@@ -1,16 +1,8 @@
 import SearchBar from "./SearchBar";
 import Category from "./Category";
+import { Link } from "react-router-dom";
 
-const NavBar = ({
-  search,
-  category,
-  categories,
-  onSearchChange,
-  onCategoryChange,
-  onClearFilters,
-}) => {
-  const hasFilters = search.trim() !== "" || category !== "";
-
+const NavBar = ({ search, category, categories, onSearchChange, onCategoryChange }) => {
   return (
     <header className="sticky top-0 z-40 mb-8 border-b bg-background/80 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
@@ -23,13 +15,15 @@ const NavBar = ({
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
+          <Link
+            to="/packages"
+            className="rounded-md border px-3 py-2 text-sm hover:bg-accent hover:text-accent-foreground"
+          >
+            Packages
+          </Link>
+
           <SearchBar value={search} onChange={onSearchChange} />
-
           <Category value={category} categories={categories} onChange={onCategoryChange} />
-
-         
-    
-          
         </div>
       </div>
     </header>
